@@ -22,16 +22,18 @@ app.use(express.json());
 app.set('views', path.join(__dirname, 'views')); 
 app.use(express.static(__dirname +'/public'));  
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 5005;
 global.siteTitle = "Test";
 global.SiteName = "Test";
 
 
-mongoose.connect('mongodb://localhost:27017/social_media_app', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
+mongoose.connect('mongodb+srv://nodetest:Lloyd123456@cluster0.wlbcv.mongodb.net/socialnetwork', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+  });
 
 // Swagger setup
 const swaggerOptions = {
