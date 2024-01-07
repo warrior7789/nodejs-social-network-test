@@ -22,7 +22,7 @@ app.use(express.json());
 app.set('views', path.join(__dirname, 'views')); 
 app.use(express.static(__dirname +'/public'));  
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 global.siteTitle = "Test";
 global.SiteName = "Test";
 
