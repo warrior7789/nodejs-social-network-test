@@ -11,9 +11,9 @@ exports.fetchCurrentURL = (req) => {
 
 exports.fetchUserImageURL = (req,folder ,image) => {
 
-    if (image && image != undefined && fs.existsSync('./public/upload/users/' + folder + '/' + image)) {
+    if (image && image != undefined && fs.existsSync('./public/upload/users/' + image)) {
         //file exists
-        return this.fetchCurrentURL(req) + '/upload/users/' + folder + '/' + image
+        return this.fetchCurrentURL(req) + '/upload/users/'+ image
     } else {
         return this.fetchCurrentURL(req) + '/uploads/default/image-not-found.png'
     }

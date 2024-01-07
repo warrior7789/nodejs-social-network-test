@@ -118,7 +118,9 @@ exports.updateProfile = async (req, res, next) => {
         user.fullname = fullname || user.fullname;
         // Save the updated user data
         if (req.files && req.files.profilepic !== "undefined") {
+            console.log("file upload ")
             let profilepic = req.files.profilepic; 
+            console.log("profilepic",profilepic)
             const extensionName = path.extname(profilepic.name);
             const allowedExtension = ['.png','.jpg','.jpeg'];
             const containsMarcus = allowedExtension.includes(extensionName) 
@@ -126,13 +128,13 @@ exports.updateProfile = async (req, res, next) => {
                 var timestamp = new Date().getTime();   
                 filename = user._id+extensionName;   
                 user.profilePicture =   filename; 
-                if(!fs.existsSync(absolutePath +'/upload/users')){
+                /*if(!fs.existsSync(absolutePath +'/upload/users')){
                     fs.mkdirSync(absolutePath +'/upload/users');
                 }
                 if(!fs.existsSync(absolutePath +'/upload/users/'+user._id)){
                     fs.mkdirSync(absolutePath +'/upload/users/'+user._id);
-                }
-                await profilepic.mv(absolutePath+'/upload/users/'+user._id+'/'+filename, function(err) {
+                }*/
+                await profilepic.mv(absolutePath+'/upload/users/'+filename, function(err) {
                     if (err){  
                         return res.status(400).send({
                             data: {},
