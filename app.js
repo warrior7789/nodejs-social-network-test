@@ -38,7 +38,7 @@ mongoose.connect('mongodb+srv://nodetest:Lloyd123456@cluster0.wlbcv.mongodb.net/
 // Swagger setup
 const swaggerOptions = {
   swaggerDefinition: {
-    openapi: '3.0.0', // Specify OpenAPI version
+    openapi: '3.0.0',
     info: {
       title: 'Social Networking ',
       version: '1.0.0',
@@ -49,13 +49,13 @@ const swaggerOptions = {
         bearerAuth: {
           type: 'http',
           scheme: 'bearer',
-          bearerFormat: 'JWT', // Change it to your actual token format
+          bearerFormat: 'JWT', 
         },
       },
     },
     security: [
       {
-        bearerAuth: [], // Add an empty array to indicate Bearer token
+        bearerAuth: [], 
       },
     ],
   },

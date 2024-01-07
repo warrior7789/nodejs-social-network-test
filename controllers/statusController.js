@@ -9,7 +9,7 @@ const absolutePath = path.resolve("./public/");
 const mongoose = require('mongoose');
 
 exports.addStatuses = async (req, res, next) => {
-    const userId = req.user._id; // Extracted from the JWT token middleware
+    const userId = req.user._id; 
     const { content } = req.body;
     try {
         // Create a new status

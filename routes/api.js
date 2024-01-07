@@ -8,20 +8,8 @@ const statusController = require('../controllers/statusController');
 
 
 
-/*
-/**
- * @swagger
- * /api/set-dummy-data:
- *   get:
- *     summary: setdummydata
- *     description: setdummydata
- *     responses:
- *       200:
- *         description: Successful response
- *       401:
- *         description: Unauthorized - Bearer token is missing or invalid
+
 router.get('/set-dummy-data', userController.seedDummydata);
-*/
 
 /**
  * @swagger
