@@ -187,7 +187,7 @@ exports.likeStatus = async (req, res, next) => {
             },
         );
         res.status(200).send({
-            data: await common.getStatusdetails(req,updatedStatus ),
+            data: [],
             message: "Liked successfully."
         })
     }
@@ -222,7 +222,7 @@ exports.unLikeStatus = async (req, res, next) => {
                 },
             );
             res.status(200).send({
-                data: await common.getStatusdetails(req,updatedStatus ),
+                data: [],
                 message: "Unliked successfully."
             })
         }else{
