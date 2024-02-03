@@ -27,7 +27,7 @@ global.siteTitle = "Test";
 global.SiteName = "Test";
 
 
-mongoose.connect('mongodb+srv://nodetest:Lloyd123456@cluster0.wlbcv.mongodb.net/socialnetwork', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
   })
